@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Add concert</title>
+<link rel="stylesheet" type="text/css" href="calendar/CalendarControl.css" /> 
+<script type="text/javascript" src="calendar/CalendarControl.js"> </script>
+<script type="text/javascript" src="countrystate.js"></script>
+</head>
+<body>
+<form action="http://localhost:5000/cc/api/v1.0/concerts" method="POST">
+Main Artist <input type="text" size="50" name="mainArtist"/> <p>
+Instrument <input type="text"  name="instrument"/> <p>
+Genre <select name="genre"> 
+<option value="Carnatic"> Carnatic
+<option value="Hindustani"> Hindustani
+<option value="HindustaniAndCarnatic"> Hindustani and Carnatic
+<option value="Tabla Solo"> Tabla Solo
+<option value="Tal Vadya Kacheri"> Tal Vadya Kacheri
+<option value="Fusion"> Fusion
+<option value="Other"> Other
+</select>
+<p>
+Accomnaying artists <input type="text" size="100" name="accompanyingArtists"/> <p>
+Festival (if any) <input type="text" size="100" name="festival"/><p>
+Date <input name="mmddyyyy" onfocus="showCalendarControl(this);" type="text"><p>
+Time: Hour <input name="hh" size="2" type="text"> Minutes <input name="mm" size="2" type="text"> AM/PM <input name="ampm" size="2" type="text"><p>
+Auditorium <input type="text" size="100" name="auditorium"/> <p>
+Street address <input type="text" size="100" name="address"/> <p>
+City <input type="text" size="2" name="city"/> 
+<select id='countrySelect' name='country' onchange='populateState()' /> <p>
+<select id='stateSelect' name='state' /> <p>
+<script type="text/javascript">initCountry('IN'); </script>
+URL of concert announcement <input type="text" size="100" name="url"/> <p>
+Organizer's email <input type="text"  size="50" name="contactEmail" /><p>
+<button class="button postfix"  type="submit">Add</button>       
+</form>
+</body>
+</html>
+
